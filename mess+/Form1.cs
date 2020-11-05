@@ -26,7 +26,8 @@ namespace mess_
         private void InitializeChromium()
         {
             CefSettings settings = new CefSettings();
-
+            //kullanıcı giriş verilerini tutmaya yarayan satır eklendi
+            settings.CachePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\CEF";
             Cef.Initialize(settings);
             leftChromeBrowser = new ChromiumWebBrowser("https://www.facebook.com/messages/t/");
             middleChromeBrowser = new ChromiumWebBrowser("http://web.whatsapp.com");
